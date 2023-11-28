@@ -1,4 +1,5 @@
 rootProject.name = 'ENCLICK'
 include 'intro'
 include 'pay'
+include 'user'
 
