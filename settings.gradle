@@ -1,0 +1,4 @@
+rootProject.name = 'ENCLICK'
+include 'intro'
+include 'pay'
+
