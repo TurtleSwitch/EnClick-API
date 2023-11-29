@@ -4,7 +4,7 @@ server:
 # jpa
 spring:
   datasource:
-    url: jdbc:sqlserver://183.100.213.43:9011;databaseName=BASE_QMS_GS;encrypt=false
+    url: jdbc:sqlserver://183.100.213.43:1433;databaseName=ENCLICK;encrypt=false
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     username: sa
     password: enssel!@#$
