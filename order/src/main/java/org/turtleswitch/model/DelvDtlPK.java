@@ -1,35 +1,26 @@
 package org.turtleswitch.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
+import lombok.ToString;
 
-@Entity
-@Table(name = "DELV_DTL")
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
-@IdClass(DelvDtlPK.class)
-public class DelvDtl {
+@Embeddable
+public class DelvDtlPK {
 
-    @Id
     @Column(name = "DELV_POS_SEQ")
     private int delvPosSeq;
 
-    @Id
     @Column(name = "DELV_SEQ")
     private String delvSeq;
 
-    @Id
     @Column(name = "ORDER_MST_UUID")
     private String orderMstUuid;
 
-    @Column(name = "POS")
-    private String pos;
-
-    @Column(name = "ARRIVAL_DT")
-    @CreatedDate
-    private String arrivalDt;
 }
