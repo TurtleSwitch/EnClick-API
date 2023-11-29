@@ -3,4 +3,5 @@ include 'intro'
 include 'pay'
 include 'user'
 include 'order'
+include 'pay'
 
