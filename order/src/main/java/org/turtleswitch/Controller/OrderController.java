@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.turtleswitch.Service.OrderService;
-import org.turtleswitch.model.OrderGroup;
 
 @RestController
 @RequestMapping("/order")
