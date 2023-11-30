@@ -1,11 +1,16 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.turtleswitch'
+
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-
-    implementation project(":order")
-    implementation project(":pay")
-    implementation project(":user")
-    implementation project(":product")
 }
 
 test {
