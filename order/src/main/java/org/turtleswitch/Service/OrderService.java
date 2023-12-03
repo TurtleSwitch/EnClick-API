@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.turtleswitch.dto.OrderGroupDto.OrderGroupReqDto;
 import org.turtleswitch.dto.OrderGroupDto.OrderGroupRespDto;
 import org.turtleswitch.model.OrderGroup;
+import org.turtleswitch.model.QOrderGroup;
 import org.turtleswitch.repository.OrderGroupRepository;
 
 @Service

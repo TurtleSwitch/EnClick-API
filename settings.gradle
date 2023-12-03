@@ -1,6 +1,7 @@
 rootProject.name = 'ENCLICK'
 include 'intro'
 include 'pay'
+include 'product'
 include 'user'
 include 'order'
 include 'valid'
