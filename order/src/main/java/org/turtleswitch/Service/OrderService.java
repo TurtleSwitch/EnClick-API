@@ -4,7 +4,10 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.turtleswitch.dto.OrderGroupDto.OrderGroupReqDto;
+import org.turtleswitch.dto.OrderGroupDto.OrderGroupRespDto;
 import org.turtleswitch.model.OrderGroup;
+import org.turtleswitch.model.QOrderGroup;
 import org.turtleswitch.repository.OrderGroupRepository;
 
 @Service
@@ -19,12 +22,13 @@ public class OrderService {
     }
 
     @Transactional
-    public boolean save() {
-        orderGroupRepository.save(OrderGroup.builder()
-                .orderUuid("123")
-                .orderStatCd("123")
-                .delvCost(1000)
+    public OrderGroupRespDto save(OrderGroupReqDto orderGroupReqDto) {
+        OrderGroup save = orderGroupRepository.save(OrderGroup.builder()
+                .orderUuid(orderGroupReqDto.getOrderUuid())
+                .orderStatCd(orderGroupReqDto.getOrderStatCd())
+                .delvCost(orderGroupReqDto.getDelvCost())
                 .build());
-        return true;
+
+        return new OrderGroupRespDto(save);
     }
 }
