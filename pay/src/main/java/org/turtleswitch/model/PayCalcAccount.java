@@ -1,4 +1,4 @@
-package org.turtleswitch.controller.model;
+package org.turtleswitch.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,27 +8,28 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "PAY_COMP")
+@Table(name = "PAY_CALC_ACCOUNT")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PayComp {
-
+public class PayCalcAccount {
     @Id
+    @Column(name="ACCOUNT_NO")
+    String accountNo;
+
     @Column(name="COMP_CD")
     String compCd;
 
-    @Column(name="COMP_DVCD")
-    String compDvcd;
+    @Column(name="USER")
+    String sellerId;
 
-    @Column(name="COMP_NM")
-    String compNm;
-
+    @CreationTimestamp
     @Column(name="REGI_DT")
     LocalDateTime regiDt;
 

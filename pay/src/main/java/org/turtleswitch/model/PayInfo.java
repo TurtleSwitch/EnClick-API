@@ -1,4 +1,4 @@
-package org.turtleswitch.controller.model;
+package org.turtleswitch.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -43,4 +43,10 @@ public class PayInfo {
 
     @Column(name="PAY_DT")
     LocalDateTime payDt;
+
+    @Column(name = "PAY_ACCOUNT_NO")
+    String payAccountNo;
+
+    @Column(name = "CALC_ACCOUNT_NO")
+    String calcAccountNo;
 }
