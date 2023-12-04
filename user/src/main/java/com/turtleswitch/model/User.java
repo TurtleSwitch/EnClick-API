@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Date;
 import java.time.LocalDateTime;
@@ -48,7 +50,7 @@ public class User {
     @Column(name="USED_YN")
     private char usedYn;
     @Column(name="REGI_DT", updatable=false)
-    @CreationTimeStamp
+    @CreationTimestamp
     private LocalDateTime regiDt;
     @Column(name="UPDA_DT", insertable=false)
     @UpdateTimestamp

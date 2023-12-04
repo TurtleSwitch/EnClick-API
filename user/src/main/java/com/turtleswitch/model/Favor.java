@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -27,7 +29,7 @@ public class Favor {
     @Column(name="PROD_CD")
     private String prodCd;
     @Column(name="REGI_DT", updatable=false)
-    @CreationTimeStamp
+    @CreationTimestamp
     private LocalDateTime regiDt;
     @Column(name="UPDA_DT", insertable=false)
     @UpdateTimestamp
