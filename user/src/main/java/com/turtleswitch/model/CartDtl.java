@@ -25,8 +25,10 @@ public class CartDtl {
     private String optionId;
     @Column(name="QNTY")
     private int qnty;
-    @Column(name="REGI_DT")
+    @Column(name="REGI_DT", updatable=false)
+    @CreationTimeStamp
     private LocalDateTime regiDt;
-    @Column(name="UPDA_DT")
+    @Column(name="UPDA_DT", insertable=false)
+    @UpdateTimestamp
     private LocalDateTime updaDt;
 }

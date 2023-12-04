@@ -38,8 +38,10 @@ public class Address {
     private String receiverPhoneNo;
     @Column(name="USED_YN")
     private char usedYn;
-    @Column(name="REGI_DT")
+    @Column(name="REGI_DT", updatable=false)
+    @CreationTimeStamp
     private LocalDateTime regiDt;
-    @Column(name="UPDA_DT")
+    @Column(name="UPDA_DT", insertable=false)
+    @UpdateTimestamp
     private LocalDateTime updaDt;
 }

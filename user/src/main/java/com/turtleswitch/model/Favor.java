@@ -26,8 +26,10 @@ public class Favor {
     private String userId;
     @Column(name="PROD_CD")
     private String prodCd;
-    @Column(name="REGI_DT")
+    @Column(name="REGI_DT", updatable=false)
+    @CreationTimeStamp
     private LocalDateTime regiDt;
-    @Column(name="UPDA_DT")
+    @Column(name="UPDA_DT", insertable=false)
+    @UpdateTimestamp
     private LocalDateTime updaDt;
 }
