@@ -1,26 +1,20 @@
 package org.turtleswitch.model;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.*;
 
-@Entity
-@Table(name = "OPTION_MAPPING")
+import java.io.Serializable;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @ToString
-public class OptionMapping {
+public class OptionMappingPK implements Serializable {
 
-    @Id
-    @Column(name = "OPTION_CD")
     private String optionCd;
-
-    @Id
-    @Column(name = "OPTION_DETA_CD")
     private String optionDetaCd;
 
 }

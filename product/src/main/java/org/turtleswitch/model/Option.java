@@ -17,9 +17,9 @@ public class Option {
 
     @Id
     @Column(name = "OPTION_CD")
-    String optionCd;
+    private String optionCd;
 
     @Column(name = "STOCK")
-    Integer stock;
+    private Integer stock;
 
 }

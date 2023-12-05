@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.sql.Timestamp;
 
@@ -19,27 +21,29 @@ public class OptionGroup {
 
     @Id
     @Column(name = "GROUP_CD")
-    String groupCd;
+    private String groupCd;
 
     @Column(name = "PROD_CD")
-    String prodCd;
+    private String prodCd;
 
     @Column(name = "GROUP_NM")
-    String groupNm;
+    private String groupNm;
 
     @Column(name = "SORT")
-    Integer sort;
+    private Integer sort;
 
     @Column(name = "ESSENTIAL_YN")
-    String essentialYn;
+    private String essentialYn;
 
     @Column(name = "USED_YN")
-    String usedYn;
+    private String usedYn;
 
     @Column(name = "REGI_DT")
-    Timestamp regiDt;
+    @CreatedDate
+    private Timestamp regiDt;
 
     @Column(name = "UPDA_DT")
-    Timestamp updaDt;
+    @LastModifiedDate
+    private Timestamp updaDt;
 
 }

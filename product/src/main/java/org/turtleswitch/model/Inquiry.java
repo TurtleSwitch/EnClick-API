@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.sql.Timestamp;
 
@@ -19,30 +21,32 @@ public class Inquiry {
 
     @Id
     @Column(name = "INQUIRY_CD")
-    String inquiryCd;
+    private String inquiryCd;
 
     @Column(name = "PROD_CD")
-    String prodCd;
+    private String prodCd;
 
     @Column(name = "TITLE")
-    String title;
+    private String title;
 
     @Column(name = "CONTENT")
-    String content;
+    private String content;
 
     @Column(name = "STATE")
-    String state;
+    private String state;
 
     @Column(name = "WRITED_DT")
-    Timestamp writedDt;
+    @CreatedDate
+    private Timestamp writedDt;
 
     @Column(name = "UPDA_DT")
-    Timestamp updaDt;
+    @LastModifiedDate
+    private Timestamp updaDt;
 
     @Column(name = "RESPONSER_ID")
-    String responserId;
+    private String responserId;
 
     @Column(name = "RESPONSED_DT")
-    Timestamp responsedDt;
+    private Timestamp responsedDt;
 
 }

@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.sql.Timestamp;
 
@@ -19,15 +21,17 @@ public class ProductDetail {
 
     @Id
     @Column(name = "PROD_CD")
-    String prodCd;
+    private String prodCd;
 
     @Column(name = "INTR")
-    String intr;
+    private String intr;
 
     @Column(name = "REGI_DT")
-    Timestamp regiDt;
+    @CreatedDate
+    private Timestamp regiDt;
 
     @Column(name = "UPDA_DT")
-    Timestamp updaDt;
+    @LastModifiedDate
+    private Timestamp updaDt;
 
 }

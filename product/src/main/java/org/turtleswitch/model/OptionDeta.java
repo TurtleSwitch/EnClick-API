@@ -19,27 +19,27 @@ public class OptionDeta {
 
     @Id
     @Column(name = "OPTION_DETA_CD")
-    String optionDetaCd;
+    private String optionDetaCd;
 
     @Column(name = "GROUP_CD")
-    String groupCd;
+    private String groupCd;
 
     @Column(name = "DETA_NM")
-    String detaNm;
+    private String detaNm;
 
     @Column(name = "SORT")
-    Integer sort;
+    private Integer sort;
 
     @Column(name = "PRICE")
-    Integer price;
+    private Integer price;
 
     @Column(name = "USED_YN")
-    String usedYn;
+    private String usedYn;
 
     @Column(name = "REGI_DT")
-    Timestamp regiDt;
+    private Timestamp regiDt;
 
     @Column(name = "UPDA_DT")
-    Timestamp updaDt;
+    private Timestamp updaDt;
 
 }

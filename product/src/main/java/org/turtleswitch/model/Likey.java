@@ -17,10 +17,10 @@ public class Likey {
 
     @Id
     @Column(name = "REVIEW_ID")
-    String reviewId;
+    private String reviewId;
 
     @Id
     @Column(name = "USER_ID")
-    String userId;
+    private String userId;
 
 }

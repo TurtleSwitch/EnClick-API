@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.sql.Timestamp;
 
@@ -19,23 +21,25 @@ public class Review {
 
     @Id
     @Column(name = "REVIEW_ID")
-    String reviewId;
+    private String reviewId;
 
     @Column(name = "TITLE")
-    String title;
+    private String title;
 
     @Column(name = "CONTENT")
-    String content;
+    private String content;
 
     @Column(name = "IMG_URL")
-    String imgUrl;
+    private String imgUrl;
 
     @Column(name = "USED_YN")
-    String usedYn;
+    private String usedYn;
 
     @Column(name = "REGI_DT")
-    Timestamp regiDt;
+    @CreatedDate
+    private Timestamp regiDt;
 
     @Column(name = "UPDA_DT")
-    Timestamp updaDt;
+    @LastModifiedDate
+    private Timestamp updaDt;
 }
