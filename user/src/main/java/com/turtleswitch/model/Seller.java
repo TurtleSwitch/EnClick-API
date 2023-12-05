@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -22,12 +24,15 @@ public class Seller {
     @Id
     @Column(name="SELLER_UUID")
     private String sellerUUID;
+
     @Column(name="USER_ID")
     private String userId;
     @Column(name="SELLER_NM")
     private String sellerNm;
-    @Column(name="REGI_DT")
+    @Column(name="REGI_DT", updatable=false)
+    @CreationTimestamp
     private LocalDateTime regiDt;
-    @Column(name="UPDA_DT")
+    @Column(name="UPDA_DT", insertable=false)
+    @UpdateTimestamp
     private LocalDateTime updaDt;
 }

@@ -1,9 +1,6 @@
 package com.turtleswitch.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,37 +11,39 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="ADDRESS")
+@Table(name="COMMON_CODE")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Address {
+public class CommonCode {
 
     @Id
-    @Column(name="ADDRESS_UUID")
-    private String addressUUID;
     @Column(name="COMM_CD")
     private String commCd;
-    @Column(name="USER_ID")
-    private String userId;
-    @Column(name="ADDRESS_1")
-    private String address1;
-    @Column(name="ADDRESS_2")
-    private String address2;
-    @Column(name="ZIP_CODE")
-    private int zipCode;
-    @Column(name="RECEIVER_NM")
-    private String receiverNm;
-    @Column(name="RECEIVER_PHONE_NO")
-    private String receiverPhoneNo;
+    @Column(name="COMM_NM")
+    private String commNm;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="COMM_CD", referencedColumnName="PARE_CD")
+    private CommonCode parent;
+
+    @Column(name="PARE_CD")
+    private String pareCd;
+    @Column(name="SORT")
+    private int sort;
     @Column(name="USED_YN")
     private char usedYn;
+    @Column(name="REMA")
+    private String rema;
+    @Column(name="REGI_ID")
+    private String regiId;
     @Column(name="REGI_DT", updatable=false)
     @CreationTimestamp
     private LocalDateTime regiDt;
+    @Column(name="UPDA_ID")
+    private String updaId;
     @Column(name="UPDA_DT", insertable=false)
     @UpdateTimestamp
     private LocalDateTime updaDt;
-
 }
