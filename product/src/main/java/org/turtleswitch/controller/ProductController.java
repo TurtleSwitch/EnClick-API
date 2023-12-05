@@ -2,7 +2,7 @@ package org.turtleswitch.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.turtleswitch.dto.ProdDetailInfo;
+import org.turtleswitch.dto.ProdDetailInfoDto;
 import org.turtleswitch.dto.ResponseDto;
 import org.turtleswitch.model.Product;
 
@@ -19,18 +19,18 @@ public class ProductController {
     }
 
     @GetMapping("/{prodId}")
-    public ProdDetailInfo getDetailInfo(@PathVariable String prodId){
-        return new ProdDetailInfo();
+    public ProdDetailInfoDto getDetailInfo(@PathVariable String prodId){
+        return new ProdDetailInfoDto();
     }
 
     @PostMapping("/")
-    public ProdDetailInfo productRegi(@RequestBody ProdDetailInfo prodInfo){
-        return new ProdDetailInfo();
+    public ProdDetailInfoDto productRegi(@RequestBody ProdDetailInfoDto prodInfo){
+        return new ProdDetailInfoDto();
     }
 
     @PutMapping("/{prodId}")
-    public ProdDetailInfo productUpdate(@PathVariable String prodId, @RequestBody ProdDetailInfo prodInfo){
-        return new ProdDetailInfo();
+    public ProdDetailInfoDto productUpdate(@PathVariable String prodId, @RequestBody ProdDetailInfoDto prodInfo){
+        return new ProdDetailInfoDto();
     }
 
 }

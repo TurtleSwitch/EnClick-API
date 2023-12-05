@@ -29,8 +29,8 @@ public class Product {
     @Column(name = "PROD_NM")
     private String prodNm;
 
-    @Column(name = "SELLER_ID")
-    private String sellerId;
+    @Column(name = "SELLER_UUID")
+    private String sellerUuid;
 
     @Column(name = "PRICE")
     private Integer price;
@@ -42,5 +42,6 @@ public class Product {
     @Column(name = "UPDA_DT")
     @LastModifiedDate
     private Timestamp updaDt;
+
 
 }
