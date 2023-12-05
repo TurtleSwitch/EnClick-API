@@ -1,4 +1,4 @@
-package org.turtleswitch.controller.model;
+package org.turtleswitch.model;
 
 import lombok.*;
 
