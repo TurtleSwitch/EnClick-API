@@ -4,8 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.sql.Timestamp;
 
@@ -13,31 +12,34 @@ import java.sql.Timestamp;
 @Table(name = "OPTION_DETA")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class OptionDeta {
 
     @Id
     @Column(name = "OPTION_DETA_CD")
-    String optionDetaCd;
+    private String optionDetaCd;
 
     @Column(name = "GROUP_CD")
-    String groupCd;
+    private String groupCd;
 
     @Column(name = "DETA_NM")
-    String detaNm;
+    private String detaNm;
 
     @Column(name = "SORT")
-    Integer sort;
+    private Integer sort;
 
     @Column(name = "PRICE")
-    Integer price;
+    private Integer price;
 
     @Column(name = "USED_YN")
-    String usedYn;
+    private String usedYn;
 
     @Column(name = "REGI_DT")
-    Timestamp regiDt;
+    private Timestamp regiDt;
 
     @Column(name = "UPDA_DT")
-    Timestamp updaDt;
+    private Timestamp updaDt;
 
 }

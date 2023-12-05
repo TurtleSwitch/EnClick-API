@@ -4,8 +4,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.sql.Timestamp;
 
@@ -13,19 +14,24 @@ import java.sql.Timestamp;
 @Table(name = "PRODUCT_IMG")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class ProductImg {
 
     @Id
     @Column(name = "PROD_CD")
-    String prodCd;
+    private String prodCd;
 
     @Column(name = "IMG_URL")
-    String imgUrl;
+    private String imgUrl;
 
     @Column(name = "REGI_DT")
-    Timestamp regiDt;
+    @CreatedDate
+    private Timestamp regiDt;
 
     @Column(name = "UPDA_DT")
-    Timestamp updaDt;
+    @LastModifiedDate
+    private Timestamp updaDt;
 
 }
