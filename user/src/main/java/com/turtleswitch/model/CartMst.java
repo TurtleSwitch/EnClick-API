@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -28,8 +30,10 @@ public class CartMst {
     private String prodCd;
     @Column(name="DELV_FEE")
     private int delvFee;
-    @Column(name="REGI_DT")
+    @Column(name="REGI_DT", updatable=false)
+    @CreationTimestamp
     private LocalDateTime regiDt;
-    @Column(name="UPDA_DT")
+    @Column(name="UPDA_DT", insertable=false)
+    @UpdateTimestamp
     private LocalDateTime updaDt;
 }
