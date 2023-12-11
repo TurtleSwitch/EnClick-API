@@ -4,6 +4,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.*;
 
+import java.io.Serializable;
+
 
 @Getter
 @Setter
@@ -11,7 +13,7 @@ import lombok.*;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Embeddable
-public class OrderDtlPK {
+public class OrderDtlPK implements Serializable {
 
     @Column(name = "OPTION_ID")
     private String optionId;
