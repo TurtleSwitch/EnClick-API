@@ -1,13 +1,11 @@
 package org.turtleswitch.dto;
 
 import lombok.Data;
-import org.turtleswitch.model.OptionDtl;
-import org.turtleswitch.model.Product;
+import java.util.List;
 
 @Data
 public class Receipt {
-    private Product product;
-    private int productNumber;
-    private OptionDtl optionDtl;
-    private int optionDtlNumber;
+    private String productId; // 제품Id
+    private int productNumber; // 제품 구매 개수
+    private List<OrderOptionDtl> orderOptionDtlList; // 옵션Dtl List
 }

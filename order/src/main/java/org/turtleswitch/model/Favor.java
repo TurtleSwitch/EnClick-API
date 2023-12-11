@@ -4,7 +4,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -12,33 +14,24 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "PRODUCT")
+@Table(name="FAVOR")
 @Getter
 @Setter
-public class Product {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Favor {
 
     @Id
-    @Column(name = "PROD_ID")
+    @Column(name="FAVOR_UUID")
+    private String favorUUID;
+    @Column(name="USER_ID")
+    private String userId;
+    @Column(name="PROD_CD")
     private String prodCd;
-
-    @Column(name = "CATEGORY_ID")
-    private String categoryCd;
-
-    @Column(name = "PROD_NM")
-    private String prodNm;
-
-    @Column(name = "MARKETER_ID")
-    private String marketerId;
-
-    @Column(name = "PRICE")
-    private Integer price;
-
-    @Column(name = "REGI_DT", updatable=false)
+    @Column(name="REGI_DT", updatable=false)
     @CreationTimestamp
     private LocalDateTime regiDt;
-
-    @Column(name = "UPDA_DT", insertable=false)
+    @Column(name="UPDA_DT", insertable=false)
     @UpdateTimestamp
     private LocalDateTime updaDt;
-
 }

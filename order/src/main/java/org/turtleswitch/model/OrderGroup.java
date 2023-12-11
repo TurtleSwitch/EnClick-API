@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.turtleswitch.dto.OrderGroupDto.OrderGroupReqDto;
+import org.turtleswitch.dto.OrderGroupDto.OrderSaveReqDto;
 
 import java.sql.Timestamp;
 
@@ -33,9 +33,4 @@ public class OrderGroup {
     @CreatedDate
     private Timestamp orderDt;
 
-    public OrderGroup(OrderGroupReqDto orderGroupReqDto) {
-        this.orderUuid = orderGroupReqDto.getOrderUuid();
-        this.orderStatCd = orderGroupReqDto.getOrderStatCd();
-        this.delvCost = orderGroupReqDto.getDelvCost();
-    }
 }
