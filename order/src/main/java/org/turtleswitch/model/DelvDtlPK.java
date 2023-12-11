@@ -4,13 +4,15 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @EqualsAndHashCode
 @Embeddable
-public class DelvDtlPK {
+public class DelvDtlPK implements Serializable {
 
     @Column(name = "DELV_POS_SEQ")
     private int delvPosSeq;

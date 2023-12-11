@@ -1,47 +1,65 @@
 package org.turtleswitch.dto;
 
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.turtleswitch.model.OrderGroup;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 public class OrderGroupDto {
-    @Getter
-    @Setter
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class OrderGroupReqDto {
+    @Data
+    public static class OrderSaveReqDto {
+        private int delvCost; // 배송비
+        private List<Receipt> receipt; // 영수증(mst, dtl의 데이터들이 리스트로 담겨있다)
 
-        @Size(min = 4, max = 4, message = "문자열은 정확히 4개여야합니다.")
-        private String orderUuid;
-
-        @Size(min = 3, max = 3, message = "공통코드는 정확히 3자리여야합니다.")
-        private String orderStatCd;
-
-        @Digits(integer = 4, fraction = 0, message = "배달비는 4자릿수 이하의 양의정수만 가능합니다.")
-        private int delvCost;
     }
 
-
-    @Getter
-    @Setter
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class OrderGroupRespDto {
-
+    @Data
+    public static class OrderSaveRespDto {
         private String orderStatCd;
         private int delvCost;
         private Timestamp orderDt;
-
-        public OrderGroupRespDto(OrderGroup orderGroup) {
+        public OrderSaveRespDto(OrderGroup orderGroup) {
             this.orderStatCd = orderGroup.getOrderStatCd();
             this.delvCost = orderGroup.getDelvCost();
             this.orderDt = orderGroup.getOrderDt();
         }
     }
+
+    @Data
+    public static class OrderTableRespDto {
+        private String orderUuid;
+        private String orderStatCd;
+        private int delvCost;
+        private List<OrderMstTableRespDto> orderMstTableRespDtoList;
+    }
+
+    @Data
+    public static class OrderMstTableRespDto {
+        private String orderUuid;
+        private String prodNm; // 상품이름
+        private String statCd;
+        private int payCost;
+        private int number;
+        private Timestamp regiDt; // 주문 날짜
+    }
+
+
+    @Data
+    public static class OrderMstDtlTableRespDto {
+        private String orderUuid;
+        private String prodNm; // 상품이름
+        private String statCd;
+        private int payCost;
+        private int number;
+        private Timestamp regiDt; // 주문 날짜
+        private List<OrderDtlTableRespDto> orderDtlTableRespDtoList;
+    }
+
+    @Data
+    public static class OrderDtlTableRespDto {
+        private String optionDetaNm; // 선택 옵션 이름
+        private String optionDetaNumber; // 옵션 구매 개수
+    }
 }
+
