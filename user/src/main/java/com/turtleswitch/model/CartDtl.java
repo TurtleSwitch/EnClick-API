@@ -23,8 +23,9 @@ public class CartDtl {
     @Column(name="ITEM_UUID")
     private String itemUUID;
     @Id
-    @Column(name="OPTION_ID")
-    private String optionId;
+    @Column(name="OPTION_CD")
+    private String optionCd;
+
     @Column(name="QNTY")
     private int qnty;
     @Column(name="REGI_DT", updatable=false)
