@@ -16,6 +16,6 @@ public class CartDtlPK {
     @Column(name="ITEM_UUID")
     private String itemUUID;
 
-    @Column(name="OPTION_ID")
-    private String optionId;
+    @Column(name="OPTION_CD")
+    private String optionCd;
 }

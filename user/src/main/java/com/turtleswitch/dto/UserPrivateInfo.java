@@ -12,9 +12,8 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserPrivateInfo {
+    private int year;
     private Date birthday;
     private String phoneNo;
     private String email;
-//    private boolean sendEmailYn;
-//    private boolean sendSmsYn;
 }

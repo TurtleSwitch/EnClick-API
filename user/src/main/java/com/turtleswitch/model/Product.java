@@ -28,8 +28,8 @@ public class Product {
     @Column(name = "PROD_NM")
     private String prodNm;
 
-    @Column(name = "MARKETER_ID")
-    private String marketerId;
+    @Column(name = "SELLER_UUID")
+    private String sellerUUID;
 
     @Column(name = "PRICE")
     private Integer price;
