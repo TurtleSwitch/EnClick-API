@@ -6,18 +6,19 @@ import lombok.*;
 
 import java.io.Serializable;
 
-
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode
+@ToString
 @Embeddable
-public class OrderDtlPK implements Serializable {
+public class OptionMappingPK implements Serializable {
 
-    @Column(name = "OPTION_ID")
-    private String optionId;
+    @Column(name = "OPTION_CD")
+    private String optionCd;
 
-    @Column(name = "ORDER_MST_UUID")
-    private String orderMstUuid;
+    @Column(name = "OPTION_DETA_CD")
+    private String optionDetaCd;
+
 }
