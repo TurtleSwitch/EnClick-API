@@ -5,8 +5,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import org.turtleswitch.dto.DelvDto.DelvSaveReqDto;
+import org.turtleswitch.dto.DelvDto.DelvStatSave;
 import org.turtleswitch.model.DelvMst;
-import org.turtleswitch.model.DelvStatCd;
 import org.turtleswitch.model.QDelvMst;
 import org.turtleswitch.repository.DelvDtlRepository;
 import org.turtleswitch.repository.DelvMstRepository;
@@ -50,11 +50,12 @@ public class DelvService {
 
 
     @Transactional
-    public long stat(DelvStatCd stat, String orderMstUuid) {
+    public long stat(DelvStatSave delvStatSave) {
         QDelvMst delvMst = QDelvMst.delvMst;
         return jq.update(delvMst)
-                .where(delvMst.orderMstUuid.eq(orderMstUuid)) // TODO SEQ도 동시에 조건이 들어가야 한다
-                .set(delvMst.delvStatCd, stat)
+                .where(delvMst.orderMstUuid.eq(delvStatSave.getOrderMstUuid())
+                        .and(delvMst.delvSeq.eq(delvStatSave.getSeq()))) // TODO SEQ도 동시에 조건이 들어가야 한다
+                .set(delvMst.delvStatCd, delvStatSave.getStatCd())
                 .execute();
     }
 }

@@ -4,12 +4,11 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.turtleswitch.Service.DelvService;
 import org.turtleswitch.dto.DelvDto.DelvSaveReqDto;
+import org.turtleswitch.dto.DelvDto.DelvStatSave;
 import org.turtleswitch.model.DelvMst;
-import org.turtleswitch.model.DelvStatCd;
 
 @RestController
 @RequestMapping("/delv")
@@ -40,9 +39,9 @@ public class DelvController {
     /**
      * 배송MST 상태 변경
      */
-    @PutMapping("/stat/{stat}/{orderMstUuid}")
-    public ResponseEntity<Long> stat(@PathVariable @Valid DelvStatCd stat, @PathVariable @Valid String orderMstUuid, Errors errors) {
-        return new ResponseEntity<>(delvService.stat(stat, orderMstUuid), HttpStatus.OK);
+    @PutMapping("/stat")
+    public ResponseEntity<Long> stat(@RequestBody @Valid DelvStatSave delvStatSave, BindingResult bindingResult) {
+        return new ResponseEntity<>(delvService.stat(delvStatSave), HttpStatus.OK);
     }
 
 

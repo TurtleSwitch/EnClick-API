@@ -1,2 +1,9 @@
 ### delv stat cd save
-PUT http://{{host}}:15200/delv/stat/DROPOFF/uuid2
+PUT http://{{host}}:15200/delv/stat
+Content-Type: application/json
+
+{
+  "orderMstUuid": "uuid",
+  "statCd": "CENTER",
+  "seq": 0
+}

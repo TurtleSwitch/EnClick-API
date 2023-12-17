@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import java.sql.Timestamp;
 
@@ -40,6 +38,7 @@ public class DelvMst {
     @Column(name = "USED_YN")
     private String usedYn;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "DELV_STAT_CD")
     private DelvStatCd delvStatCd;
 
