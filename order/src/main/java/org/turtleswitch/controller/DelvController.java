@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.turtleswitch.dto.DelvDto;
+import org.turtleswitch.dto.DelvDto.DelvSaveReqDto;
 import org.turtleswitch.model.DelvMst;
 
 @RestController
@@ -15,7 +17,7 @@ public class DelvController {
      * 배송 정보 등록
      */
     @PostMapping("/save")
-    public ResponseEntity<DelvMst> save(@PathVariable @Valid Delv delvMstReqDto, BindingResult bindingResult) {
+    public ResponseEntity<DelvMst> save(@PathVariable @Valid DelvSaveReqDto delvMstReqDto, BindingResult bindingResult) {
         return new ResponseEntity<>(null, HttpStatus.CREATED);
     }
 
