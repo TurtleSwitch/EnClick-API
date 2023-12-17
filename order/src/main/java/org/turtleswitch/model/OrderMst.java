@@ -30,7 +30,7 @@ public class OrderMst {
     private String prodId;
 
     @Column(name = "STAT_CD")
-    private String statCd;
+    private DelvStatCd statCd;
 
     @Column(name = "PAY_COST")
     private String payCost;

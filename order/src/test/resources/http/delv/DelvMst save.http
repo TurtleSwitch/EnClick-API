@@ -1,0 +1,11 @@
+### /delv/save
+POST http://{{host}}:15200/delv/save
+Content-Type: application/json
+
+{
+  "orderMstUuid": "uuid2",
+  "addressUuid": "uuid2",
+  "delvCompCd": "0010201"
+}
+
+<> 2023-12-17T223541.201.json

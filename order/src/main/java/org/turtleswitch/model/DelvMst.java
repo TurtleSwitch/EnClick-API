@@ -1,9 +1,9 @@
 package org.turtleswitch.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -14,7 +14,9 @@ import java.sql.Timestamp;
 @Table(name = "DELV_MST")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @IdClass(DelvMstPK.class)
 public class DelvMst {
 
@@ -38,11 +40,14 @@ public class DelvMst {
     @Column(name = "USED_YN")
     private String usedYn;
 
+    @Column(name = "DELV_STAT_CD")
+    private DelvStatCd delvStatCd;
+
     @Column(name = "REGI_DT")
-    @CreatedDate
+    @CreationTimestamp
     private Timestamp regiDt;
 
     @Column(name = "UPDA_DT")
-    @LastModifiedDate
+    @UpdateTimestamp
     private Timestamp updaDt;
 }
