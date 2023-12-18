@@ -1,7 +1,13 @@
-package com.turtleswitch.model;
+package org.turtleswitch.model;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -20,15 +26,6 @@ public class Address {
     private String addressUUID;
     @Column(name="COMM_CD")
     private String commCd;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="COMM_NM", referencedColumnName="COMM_CD")
-    private CommonCode commonCode;
-
-    @Transient
-    @Setter(AccessLevel.PROTECTED)
-    private String commNm;
-
     @Column(name="USER_ID")
     private String userId;
     @Column(name="ADDRESS_1")
@@ -50,8 +47,4 @@ public class Address {
     @UpdateTimestamp
     private LocalDateTime updaDt;
 
-    public void setCommNm(String commNm) {
-        if(commonCode != null && commonCode.getUsedYn()=='Y')
-            this.commNm = commonCode.getCommNm();
-    }
 }

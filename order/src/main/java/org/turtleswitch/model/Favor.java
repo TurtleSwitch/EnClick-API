@@ -1,6 +1,9 @@
-package com.turtleswitch.model;
+package org.turtleswitch.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,23 +14,20 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="CART_DTL")
+@Table(name="FAVOR")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@IdClass(CartDtlPK.class)
-public class CartDtl {
+public class Favor {
 
     @Id
-    @Column(name="ITEM_UUID")
-    private String itemUUID;
-    @Id
-    @Column(name="OPTION_CD")
-    private String optionCd;
-
-    @Column(name="QNTY")
-    private int qnty;
+    @Column(name="FAVOR_UUID")
+    private String favorUUID;
+    @Column(name="USER_ID")
+    private String userId;
+    @Column(name="PROD_CD")
+    private String prodCd;
     @Column(name="REGI_DT", updatable=false)
     @CreationTimestamp
     private LocalDateTime regiDt;

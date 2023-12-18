@@ -1,4 +1,4 @@
-package com.turtleswitch.model;
+package org.turtleswitch.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,7 +9,6 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Entity
@@ -28,8 +27,8 @@ public class Product {
     @Column(name = "PROD_NM")
     private String prodNm;
 
-    @Column(name = "SELLER_UUID")
-    private String sellerUUID;
+    @Column(name = "MARKETER_ID")
+    private String marketerId;
 
     @Column(name = "PRICE")
     private Integer price;
