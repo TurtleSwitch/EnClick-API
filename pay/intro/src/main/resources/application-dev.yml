@@ -1,0 +1,18 @@
+server:
+  port: 15200
+  servlet:
+    context-path: /
+
+# jpa
+spring:
+  application:
+    name: ENCLICK
+  datasource:
+    url: jdbc:sqlserver://183.100.213.43:1433;databaseName=ENCLICK;encrypt=false
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: enssel!@#$
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

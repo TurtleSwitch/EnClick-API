@@ -1,30 +1,43 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.4'
 }
 
-group = 'org.turtleswitch'
-version = '0.0.1-SNAPSHOT'
-
-repositories {
-    mavenCentral()
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
 
-dependencies {
-    implementation project(":valid")
+allprojects {
+    group = 'org.turtleswitch'
+    version = '0.0.1-SNAPSHOT'
 
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    java {
+        sourceCompatibility = '17'
+    }
 
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-//    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
+    repositories {
+        mavenCentral()
+    }
 
-    compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
+    clean {
+        delete file('build')
+    }
+}
 
-    annotationProcessor 'org.projectlombok:lombok'
-    annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
-    annotationProcessor("jakarta.persistence:jakarta.persistence-api")
-    annotationProcessor("jakarta.annotation:jakarta.annotation-api")
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+}
+
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
 }
