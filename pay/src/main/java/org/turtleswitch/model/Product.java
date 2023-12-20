@@ -29,8 +29,8 @@ public class Product {
     @Column(name = "PROD_NM")
     String prodNm;
 
-    @Column(name = "SELLER_ID")
-    String sellerId;
+    @Column(name = "SELLER_UUID")
+    String sellerUuid;
 
     @Column(name = "PRICE")
     Integer price;

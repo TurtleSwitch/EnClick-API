@@ -39,8 +39,8 @@ public class Seller{
                 .from(payInfo)
                     .innerJoin(orderMst).on(orderMst.orderMstUuid.eq(payInfo.orderMstUuid))
                     .innerJoin(product).on(product.prodCd.eq(orderMst.prodCd))
-                        .innerJoin(seller).on(seller.userId.eq(product.sellerId))
-                            .innerJoin(payComp).on(seller.userId.eq(product.sellerId))
+                        .innerJoin(seller).on(seller.userId.eq(product.sellerUuid))
+                            .innerJoin(payComp).on(seller.userId.eq(product.sellerUuid))
                     .innerJoin(payComp).on(payComp.compCd.eq(payInfo.compCd))
                 .where(builder);
 

@@ -13,7 +13,7 @@ import java.sql.Date;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="USER")
+@Table(name="[USER]")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -22,7 +22,6 @@ public class User {
     @Id
     @Column(name="USER_ID")
     private String userId;
-
     @Column(name="NICK_NM")
     private String nickNm;
     @Column(name="NM")
