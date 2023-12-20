@@ -20,10 +20,10 @@ import java.sql.Timestamp;
 public class Product {
 
     @Id
-    @Column(name = "PROD_ID")
+    @Column(name = "PROD_CD")
     String prodCd;
 
-    @Column(name = "CATEGORY_ID")
+    @Column(name = "CATEGORY_CD")
     String categoryCd;
 
     @Column(name = "PROD_NM")
