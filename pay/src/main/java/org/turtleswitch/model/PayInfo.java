@@ -19,7 +19,7 @@ public class PayInfo {
 
     @Id
     @Column(name="PAY_SEQ")
-    int paySeq;
+    Long paySeq;
 
     @Id
     @Column(name="COMP_CD")
@@ -39,7 +39,7 @@ public class PayInfo {
     String orderMstUuid;
 
     @Column(name="AMOUNT")
-    int amount;
+    Long amount;
 
     @Column(name="PAY_DT")
     LocalDateTime payDt;

@@ -1,25 +1,31 @@
 package org.turtleswitch.controller;
 
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.turtleswitch.dto.PayInfoDto;
 import org.turtleswitch.model.PayCalcAccount;
 import org.turtleswitch.model.PayComp;
 import org.turtleswitch.model.PayMethod;
+import org.turtleswitch.service.PayService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/pay")
+@AllArgsConstructor
 public class PayController {
+
+    PayService payService;
+
     @GetMapping("/info")
-    public List<PayInfoDto> payInfoTable(){
-        return null;
+    public ResponseEntity<List<PayInfoDto>> payInfoTable(){
+        return payService.getAllPayInfo();
     }
 
-    @GetMapping("/info/{payInfoId}")
-    public ResponseEntity<PayInfoDto> getPayInfo(@PathVariable("payInfoId") String payInfoId){
-        return null;
+    @GetMapping("/info/filterd")
+    public ResponseEntity<List<PayInfoDto>> getPayInfo(PayInfoDto filter){
+        return payService.getPayInfo(filter);
     }
 
     @PostMapping("/info")

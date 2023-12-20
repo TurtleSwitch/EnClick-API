@@ -10,7 +10,7 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
     annotationProcessor 'org.projectlombok:lombok'
-    implementation("com.querydsl:querydsl-jpa")
+    implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
 
     annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
     annotationProcessor("jakarta.persistence:jakarta.persistence-api")

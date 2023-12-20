@@ -13,7 +13,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "OrderMst")
+@Table(name = "ORDER_MST")
 @Getter
 @Setter
 @NoArgsConstructor
